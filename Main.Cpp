@@ -1,11 +1,11 @@
 #include <iostream>
-//#include "store.hpp"
+#include "ComplexNumber.hpp"
 
 using namespace std;
 
 int main()
 {
-
+    ComplexNumber n = ComplexNumber("n");
 
 
 
