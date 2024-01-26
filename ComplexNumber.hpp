@@ -1,11 +1,17 @@
 #include <string>
 using namespace std;
 
-class ComplexNumber {
+class ComplexNumber
+{
 private:
-    string name{};
+	float a{};
+	float b{};
 
 public:
-    string get_numbers();
-    explicit ComplexNumber(string name);
+	explicit ComplexNumber(float a, float b);
+	string get_form();
+	string addition(ComplexNumber ComplexNumber);
+	string subtraction(ComplexNumber ComplexNumber);
+	string multiplication(ComplexNumber ComplexNumber);
+	string division(ComplexNumber ComplexNumber);
 };
