@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <tuple>
+#include <cmath>
 #include "ComplexNumber.hpp"
 
 using namespace std;
@@ -11,117 +13,99 @@ ComplexNumber::ComplexNumber(float a, float b)
 	this->b = b;
 }
 
-string ComplexNumber::get_form()
-{
-	stringstream a1;
-	stringstream b1;
+string ComplexNumber::pretty_print(){
+	stringstream c1;
+	stringstream d1;
 	string brdge;
-	
-	if (b < 0)
-	{	
-		b = abs(b);	
-		brdge = " - ";
-	}
-	else {
-		brdge = " + ";
-	}
 
-	a1 << a;
-	b1 << b;
+	if (a != 0) {
+		if (b != 0) {
+			if (b < 0)
+			{
+				b = abs(b);
+				brdge = " - ";
+			}
+			else {
+				brdge = " + ";
+			}
+			c1 << a;
+			d1 << b;
 
-	return a1.str() + brdge + b1.str() + "i";
+			return c1.str() + brdge + d1.str() + "i\n";
+		}
+		else {
+			c1 << a;
+			return c1.str() + "\n";
+		}
+	} else {
+		d1 << b;
+		return d1.str() + "i\n";
+	}
 };
 
-string ComplexNumber::addition(ComplexNumber ComplexNumber) {
+tuple<float, float> ComplexNumber::addition(ComplexNumber ComplexNumber) {
 	float c = a + ComplexNumber.a;
 	float d = b + ComplexNumber.b;
 
-	stringstream c1;
-	stringstream d1;
-	string brdge;
-
-	if (d < 0)
-	{
-		d = abs(d);
-		brdge = " - ";
-	}
-	else {
-		brdge = " + ";
-	}
-
-	c1 << c;
-	d1 << d;
-
-	return c1.str() + brdge + d1.str() + "i";
+	return  make_tuple(c,d);
 }
 
-string ComplexNumber::subtraction(ComplexNumber ComplexNumber) {
+tuple<float, float> ComplexNumber::subtraction(ComplexNumber ComplexNumber) {
 	float c = a - ComplexNumber.a;
 	float d = b - ComplexNumber.b;
 
-	stringstream c1;
-	stringstream d1;
-	string brdge;
+	return make_tuple(c, d);
+};
 
-	if (d < 0)
-	{
-		d = abs(d);
-		brdge = " - ";
-	}
-	else {
-		brdge = " + ";
-	}
+tuple<float, float> ComplexNumber::negation() {
+	float c = a * -1;
+	float d = b * -1;
 
-	c1 << c;
-	d1 << d;
+	return make_tuple(c, d);
+};
 
-	return c1.str() + brdge + d1.str() + "i";
-}
+tuple<float, float> ComplexNumber::magnitude() {
+	float c = sqrt((a*a)+(b*b));
+	float d = 0;
+	
+	return make_tuple(c, d);
+};
 
-string ComplexNumber::multiplication(ComplexNumber ComplexNumber) {
+tuple<float, float> ComplexNumber::conjugation() {
+	float c;
+	float d;
+
+	return make_tuple(c, d);
+};
+
+tuple<float, float> ComplexNumber::real() {
+	float c;
+	float d;
+
+	return make_tuple(c, d);
+};
+
+tuple<float, float> ComplexNumber::imaginary() {
+	float c;
+	float d;
+
+	return make_tuple(c, d);
+};
+
+tuple<float, float> ComplexNumber::multiplication(ComplexNumber ComplexNumber) {
 	float c = (a * ComplexNumber.a) - (b * ComplexNumber.b);
 	float d = (a * ComplexNumber.b) + (b * ComplexNumber.a);
-	stringstream c1;
-	stringstream d1;
-	string brdge;
+	
+	return make_tuple(c, d);
+};
 
-	if (d < 0)
-	{
-		d = abs(d);
-		brdge = " - ";
-	}
-	else {
-		brdge = " + ";
-	}
-
-	c1 << c;
-	d1 << d;
-
-	return c1.str() + brdge + d1.str() + "i";
-}
-
-string ComplexNumber::division(ComplexNumber ComplexNumber) {
+tuple<float, float> ComplexNumber::division(ComplexNumber ComplexNumber) {
 	float c = (a * ComplexNumber.a) + (b * ComplexNumber.b);
 	float d = (a * ComplexNumber.b) - (b * ComplexNumber.a);
 	float e = (ComplexNumber.a * ComplexNumber.a) + (ComplexNumber.b * ComplexNumber.b);
 
-	stringstream c1;
-	stringstream d1;
-	stringstream e1;
-	string brdge;
+	c = c / e;
+	d = d / e;
 
-	if (d < 0)
-	{
-		d = abs(d);
-		brdge = " + ";
-	}
-	else {
-		brdge = " - ";
-	}
-
-	c1 << c;
-	d1 << d;
-	e1 << e;
-
-	return c1.str() + brdge + d1.str() + "i / " + e1.str();
-}
+	return make_tuple(c, d);
+};
