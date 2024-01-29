@@ -15,10 +15,11 @@ public:
 	tuple<float, float> addition(ComplexNumber ComplexNumber);
 	tuple<float, float> subtraction(ComplexNumber ComplexNumber);
 	tuple<float, float> negation();
-	tuple<float, float> magnitude();
+	float magnitude();
 	tuple<float, float> conjugation();
-	tuple<float, float> real();
-	tuple<float, float> imaginary();
+	long real();
+	string imaginary();
+	long imnum();
 	tuple<float, float> multiplication(ComplexNumber ComplexNumber);
 	tuple<float, float> division(ComplexNumber ComplexNumber);
 };

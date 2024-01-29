@@ -64,11 +64,8 @@ tuple<float, float> ComplexNumber::negation() {
 	return make_tuple(c, d);
 };
 
-tuple<float, float> ComplexNumber::magnitude() {
-	float c = sqrt((a*a)+(b*b));
-	float d = 0;
-	
-	return make_tuple(c, d);
+float ComplexNumber::magnitude() {
+	return sqrt((a * a) + (b * b));
 };
 
 tuple<float, float> ComplexNumber::conjugation() {
@@ -78,18 +75,18 @@ tuple<float, float> ComplexNumber::conjugation() {
 	return make_tuple(c, d);
 };
 
-tuple<float, float> ComplexNumber::real() {
-	float c=a;
-	float d=0;
-
-	return make_tuple(c, d);
+long ComplexNumber::real() {
+	return a;
 };
 
-tuple<float, float> ComplexNumber::imaginary() {
-	float c=0;
-	float d=b;
+string ComplexNumber::imaginary() {
+	stringstream d1;
+	d1 << b;
+	return d1.str() + "i";
+};
 
-	return make_tuple(c, d);
+long ComplexNumber::imnum() {
+	return b;
 };
 
 tuple<float, float> ComplexNumber::multiplication(ComplexNumber ComplexNumber) {
