@@ -72,22 +72,22 @@ tuple<float, float> ComplexNumber::magnitude() {
 };
 
 tuple<float, float> ComplexNumber::conjugation() {
-	float c;
-	float d;
+	float c=a;
+	float d=(b*-1);
 
 	return make_tuple(c, d);
 };
 
 tuple<float, float> ComplexNumber::real() {
-	float c;
-	float d;
+	float c=a;
+	float d=0;
 
 	return make_tuple(c, d);
 };
 
 tuple<float, float> ComplexNumber::imaginary() {
-	float c;
-	float d;
+	float c=0;
+	float d=b;
 
 	return make_tuple(c, d);
 };

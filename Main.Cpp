@@ -30,7 +30,7 @@ int main()
     tie(helpa, helpb) = m.magnitude();
     ComplexNumber d = ComplexNumber(helpa, helpb);
     cout << d.pretty_print();
-/*
+
 //conjugation
     tie(helpa, helpb) = m.conjugation();
     ComplexNumber e = ComplexNumber(helpa, helpb);
@@ -55,7 +55,7 @@ int main()
     tie(helpa, helpb) = m.division(n);
     ComplexNumber i = ComplexNumber(helpa, helpb);
     cout << i.pretty_print();
-*/
+
     cout << "complete!!\n";
 
 
