@@ -26,10 +26,7 @@ string ComplexList::sum()
     {
         rl = rl + i->real();
         im = im + i->imnum();
-
-        //cout << i->real() << endl << i->imnum() << endl;
     }
-    //cout << endl;
 
 	stringstream c1;
 	stringstream d1;

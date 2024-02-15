@@ -14,8 +14,8 @@ public:
 	string pretty_print();
 	tuple<float, float> addition(ComplexNumber ComplexNumber);
 	tuple<float, float> subtraction(ComplexNumber ComplexNumber);
-	tuple<float, float> negation();
 	float magnitude();
+	tuple<float, float> negation();
 	tuple<float, float> conjugation();
 	long real();
 	string imaginary();

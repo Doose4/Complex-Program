@@ -1,6 +1,6 @@
 #include <iostream>
 #include <list>
-#include "Complexlist.hpp"
+#include "ComplexList.hpp"
 
 using namespace std;
 
@@ -36,8 +36,8 @@ int main()
     cout << d.pretty_print();
 
 //real
-    float real = m.real();
-    cout << real << endl;
+    long realnum = m.real();
+    cout << realnum << endl;
 
 //imaginary
     string imaginary = m.imaginary();
